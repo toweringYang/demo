@@ -27,9 +27,9 @@ FROM oraclelinux:7-slim
 MAINTAINER SHANHY
 
 # Add Spring Boot Native app spring-boot-graal to Container
-COPY --from=0 "/build/target/spring-native-demo" spring-native-demo
+COPY --from=0 "/build/native/nativeCompile/demo1" spring-native-demo
 
-ENV PORT=8081
+ENV PORT=8080
 
 # Fire up our Spring Boot Native app by default
 CMD [ "sh", "-c", "./spring-native-demo -Dserver.port=$PORT" ]
